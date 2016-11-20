@@ -1,0 +1,59 @@
+covergroup slavenum_reqtype_cov @ (posedge clk);
+
+m0_slavenum : coverpoint DUV.master_0_addr[31:30] {
+	bins m0_s0	= {0};
+	bins m0_s1	= {1};
+	bins m0_s2	= {2};
+	bins m0_s3	= {3};
+}
+
+m0_cmd : coverpoint DUV.master_0_cmd {
+	bins READ	= {0};
+	bins WRITE	= {1};
+}
+
+m0 : cross m0_slavenum, m0_cmd;
+
+m1_slavenum : coverpoint DUV.master_1_addr[31:30] {
+	bins m1_s0	= {0};
+	bins m1_s1	= {1};
+	bins m1_s2	= {2};
+	bins m1_s3	= {3};
+}
+
+m1_cmd : coverpoint DUV.master_1_cmd {
+	bins READ	= {0};
+	bins WRITE	= {1};
+}
+
+m1 : cross m1_slavenum, m1_cmd;
+
+m2_slavenum : coverpoint DUV.master_2_addr[31:30] {
+	bins m2_s0	= {0};
+	bins m2_s1	= {1};
+	bins m2_s2	= {2};
+	bins m2_s3	= {3};
+}
+
+m2_cmd : coverpoint DUV.master_2_cmd {
+	bins READ	= {0};
+	bins WRITE	= {1};
+}
+
+m2 : cross m2_slavenum, m2_cmd;
+
+m3_slavenum : coverpoint DUV.master_3_addr[31:30] {
+	bins m3_s0	= {0};
+	bins m3_s1	= {1};
+	bins m3_s2	= {2};
+	bins m3_s3	= {3};
+}
+
+m3_cmd : coverpoint DUV.master_3_cmd {
+	bins READ	= {0};
+	bins WRITE	= {1};
+}
+
+m3 : cross m3_slavenum, m3_cmd;
+
+endgroup
