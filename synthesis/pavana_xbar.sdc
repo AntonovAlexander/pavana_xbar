@@ -1,0 +1,1 @@
+create_clock -period 115MHz -name xbar_clk [get_ports clk_i]
