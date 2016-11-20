@@ -1,0 +1,1 @@
+coverage report -file cover.dat -lines
