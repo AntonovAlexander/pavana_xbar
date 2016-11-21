@@ -47,6 +47,7 @@
 module xbar_tb_4buf ();
 
 localparam SLAVE_MEMSIZE32 = 1024;
+localparam TRANS_BUFSISE = 4;
 
 reg clk, rst;
 

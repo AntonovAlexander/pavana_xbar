@@ -3,12 +3,12 @@ always @* assert (rdreq1_fifo_full == 1'b0) else $fatal("Too many read requests 
 always @* assert (rdreq2_fifo_full == 1'b0) else $fatal("Too many read requests acked in Master 2!");
 always @* assert (rdreq3_fifo_full == 1'b0) else $fatal("Too many read requests acked in Master 3!");
 
-always @* assert (DUV.slave_0_sequencer.cursize < 9) else $fatal("OoO sequencer 0 overloaded!");
-always @* assert (DUV.slave_1_sequencer.cursize < 9) else $fatal("OoO sequencer 1 overloaded!");
-always @* assert (DUV.slave_2_sequencer.cursize < 9) else $fatal("OoO sequencer 2 overloaded!");
-always @* assert (DUV.slave_3_sequencer.cursize < 9) else $fatal("OoO sequencer 3 overloaded!");
+always @* assert (DUV.slave_0_sequencer.cursize < (TRANS_BUFSISE+1)) else $fatal("OoO sequencer 0 overloaded!");
+always @* assert (DUV.slave_1_sequencer.cursize < (TRANS_BUFSISE+1)) else $fatal("OoO sequencer 1 overloaded!");
+always @* assert (DUV.slave_2_sequencer.cursize < (TRANS_BUFSISE+1)) else $fatal("OoO sequencer 2 overloaded!");
+always @* assert (DUV.slave_3_sequencer.cursize < (TRANS_BUFSISE+1)) else $fatal("OoO sequencer 3 overloaded!");
 
-always @* assert (DUV.pavana_xbar_inorder.sequencer_master_0.cursize < 9) else $fatal("Master sequencer 0 overloaded!");
-always @* assert (DUV.pavana_xbar_inorder.sequencer_master_1.cursize < 9) else $fatal("Master sequencer 1 overloaded!");
-always @* assert (DUV.pavana_xbar_inorder.sequencer_master_2.cursize < 9) else $fatal("Master sequencer 2 overloaded!");
-always @* assert (DUV.pavana_xbar_inorder.sequencer_master_3.cursize < 9) else $fatal("Master sequencer 3 overloaded!");
+always @* assert (DUV.pavana_xbar_inorder.sequencer_master_0.cursize < (TRANS_BUFSISE+1)) else $fatal("Master sequencer 0 overloaded!");
+always @* assert (DUV.pavana_xbar_inorder.sequencer_master_1.cursize < (TRANS_BUFSISE+1)) else $fatal("Master sequencer 1 overloaded!");
+always @* assert (DUV.pavana_xbar_inorder.sequencer_master_2.cursize < (TRANS_BUFSISE+1)) else $fatal("Master sequencer 2 overloaded!");
+always @* assert (DUV.pavana_xbar_inorder.sequencer_master_3.cursize < (TRANS_BUFSISE+1)) else $fatal("Master sequencer 3 overloaded!");
