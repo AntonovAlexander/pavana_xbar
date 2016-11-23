@@ -36,7 +36,7 @@
 
 `timescale 1ns / 1ps
 
-`define HALF_PERIOD			10						// external 100 MHZ
+`define HALF_PERIOD			10						// external 50 MHZ
 `define PERIOD				(2*`HALF_PERIOD)
 
 `define M0_RAND_SEED 	1
