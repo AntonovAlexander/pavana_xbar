@@ -84,7 +84,7 @@ reg [415:0] shiftdatareg_in;
 always @(posedge clk_i)shiftdatareg_in <= {shiftdatareg_in[414:0], shiftdata_i};
 
 assign master_0_addr 	= shiftdatareg_in[31:0];
-assign master_0_wdata 	= shiftdatareg_in[63:0];
+assign master_0_wdata 	= shiftdatareg_in[63:32];
 assign master_1_addr 	= shiftdatareg_in[95:64];
 assign master_1_wdata 	= shiftdatareg_in[127:96];
 assign master_2_addr 	= shiftdatareg_in[159:128];
